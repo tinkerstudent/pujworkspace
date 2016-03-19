@@ -46,7 +46,7 @@ public class Calculator implements ActionListener {
 		String actionCommand = e.getActionCommand();
 		switch (actionCommand) {
 			case "=":
-				calculateResultAction();
+				calculate();
 				break;
 			case "AC":
 				allClearAction();
@@ -75,7 +75,7 @@ public class Calculator implements ActionListener {
 		inputs.clear();
 	}
 	
-	public void calculateResultAction() {
+	public void calculate() {
 		ArithmeticParser parser = new ArithmeticParser("+", "-", "*", "\u00F7");
 		Double result = parser.evaluate(inputs);
 		if (result == null) {
